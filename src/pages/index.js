@@ -1,5 +1,4 @@
 import Head from "next/head";
-import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import UserDashboard from "./_userDashboard";
 import { useEffect } from "react";
@@ -13,7 +12,6 @@ import {
 } from "../../redux/actions/dataAction";
 import Hydration from "./_hydration";
 
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -40,7 +38,6 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <UserDashboard />
-        <Hydration/>
       </main>
     </>
   );

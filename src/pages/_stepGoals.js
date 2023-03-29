@@ -6,7 +6,7 @@ const StepGoals = () => {
   const users = useSelector((state) => state.users);
 
 
-  const findUserFirstName = () => user.name?.split(" ")[0];
+  const findUserFirstName = user.name?.split(" ")[0];
 
   const findAvgSteps = () => {
     const totalStepGoal = users.reduce((acc, user) => {
@@ -14,7 +14,7 @@ const StepGoals = () => {
 
       return acc;
     }, 0);
-    return totalStepGoal / users.length;
+    return (totalStepGoal / users.length).toString()
   };
   return (
     <div>
@@ -25,7 +25,7 @@ const StepGoals = () => {
       <section className="lower-step-card-container">
         <div className="step-avg-goal-wrapper">
       <span>
-        {findUserFirstName()}'s avg step goal: 
+        {findUserFirstName}'s avg step goal: 
       </span>
       </div>
       <div className="step-avg-goal-wrapper">

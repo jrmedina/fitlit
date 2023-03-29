@@ -1,6 +1,6 @@
 import React from 'react'
 
-const _waterDroplet = () => {
+const WaterDroplet = () => {
 
 
 
@@ -12,4 +12,4 @@ const _waterDroplet = () => {
   )
 }
 
-export default _waterDroplet
+export default WaterDroplet
