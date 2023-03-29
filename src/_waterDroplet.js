@@ -1,9 +1,8 @@
-import "./styles/waterDroplets.css"
 import React from 'react'
 
 const _waterDroplet = () => {
 
-    
+
 
   return (
     <div>
