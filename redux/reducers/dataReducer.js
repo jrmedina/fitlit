@@ -1,29 +1,27 @@
 import { ActionTypes } from "../constants/action-types";
 
-const initialState = {};
-
-export const hydrationReducer = (state = initialState, { type, payload }) => {
+export const hydrationReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_HYDRATION:
-      return { ...state, hydration: [...payload] };
+      return [...state, ...payload];
     default:
-      return initialState;
+      return state;
   }
 };
 
-export const sleepReducer = (state = initialState, { type, payload }) => {
+export const sleepReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_SLEEP:
-      return { ...state, sleep: [...payload] };
+      return [...state, ...payload];
     default:
-      return initialState;
+      return state;
   }
 };
-export const activityReducer = (state = initialState, { type, payload }) => {
+export const activityReducer = (state = [], { type, payload }) => {
   switch (type) {
     case ActionTypes.SET_ACTIVITY:
-      return { ...state, activity: [...payload] };
+      return [...state, ...payload];
     default:
-      return initialState;
+      return state;
   }
 };
