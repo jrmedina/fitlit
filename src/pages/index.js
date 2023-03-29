@@ -1,19 +1,35 @@
 import Head from "next/head";
-import Image from "next/image";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Test from "./_test";
-import { fetchData } from "../../utils/fetchCalls";
-import { GetStaticProps } from "next";
+import UserDashboard from "./_userDashboard";
 import { useEffect } from "react";
 import { getData } from "../../utils/fetchCalls";
+import { useDispatch, useSelector } from "react-redux";
+import { setUser, setUsers } from "../../redux/actions/userAction";
+import {
+  setActivity,
+  setHydration,
+  setSleep,
+} from "../../redux/actions/dataAction";
+import Hydration from "./_hydration";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
+  const dispatch = useDispatch();
+  const allUsers = useSelector((state) => state.users);
+  const selectedUser = useSelector((state) => state.user);
+
   useEffect(() => {
-    getData().then((data) => console.log(data));
+    getData().then((data) => {
+      dispatch(setHydration(data[2].hydrationData));
+      dispatch(setUsers(data[0].users));
+      dispatch(setUser(data[0].users[18]));
+      dispatch(setSleep(data[1].sleepData));
+      dispatch(setActivity(data[3].activityData));
+    });
   }, []);
+
   return (
     <>
       <Head>
@@ -23,7 +39,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Test />
+        <UserDashboard />
+        <Hydration/>
       </main>
     </>
   );

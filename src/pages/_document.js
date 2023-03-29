@@ -4,14 +4,14 @@ import store from '../../redux/store';
 
 export default function Document() {
   return (
-    <Provider store={store}>
-      <Html lang="en">
-        <Head />
+    <Html lang="en">
+      <Head />
         <body>
           <Main />
+
           <NextScript />
         </body>
-      </Html>
-    </Provider>
+   
+    </Html>
   );
 }
