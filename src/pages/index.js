@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
-import Test from "./_test";
+import UserDashboard from "./_userDashboard";
 import { useEffect } from "react";
 import { getData } from "../../utils/fetchCalls";
 import { useDispatch, useSelector } from "react-redux";
@@ -21,12 +21,10 @@ export default function Home() {
 
   useEffect(() => {
     getData().then((data) => {
-      // console.log("data", data[2].hydrationData);
-        dispatch(setHydration(data[2].hydrationData));
+      dispatch(setHydration(data[2].hydrationData));
       dispatch(setUsers(data[0].users));
-      dispatch(setUser(data[0].users[5]));
+      dispatch(setUser(data[0].users[18]));
       dispatch(setSleep(data[1].sleepData));
-    
       dispatch(setActivity(data[3].activityData));
     });
   }, []);
@@ -40,7 +38,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <Test />
+        <UserDashboard />
       </main>
     </>
   );
