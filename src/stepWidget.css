@@ -1,0 +1,49 @@
+.step-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    width: 200px;
+    border: solid 1px #fff;
+    border-radius: 2rem;
+    padding: .5rem;
+    padding-top: .1rem;
+}
+
+.step-header-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 15%;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.lower-step-card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.step-avg-goal-wrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: .3rem;
+}
+
+
+
+
+
+
+
+
+
+
+

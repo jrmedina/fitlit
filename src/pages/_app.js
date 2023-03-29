@@ -1,4 +1,9 @@
 import "@/styles/globals.css";
+import "../stepWidget.css";
+import "../waterDroplet.css";
+import "../stepWidget.css";
+
+
 import { Provider } from "react-redux";
 import store from "../../redux/store";
 
