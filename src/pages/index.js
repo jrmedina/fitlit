@@ -11,6 +11,7 @@ import {
   setHydration,
   setSleep,
 } from "../../redux/actions/dataAction";
+import Hydration from "./_hydration";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +40,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <UserDashboard />
+        <Hydration/>
       </main>
     </>
   );

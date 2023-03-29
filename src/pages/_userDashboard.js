@@ -8,7 +8,7 @@ const UserDashboard = () => {
   const user = useSelector((state) => state.user);
 
   const findUserFirstName = () => user.name?.split(" ")[0];
-  
+
   return (
     <div>
       <h1>Welcome, {findUserFirstName()}</h1>
@@ -21,8 +21,7 @@ const UserDashboard = () => {
         <Diversity3OutlinedIcon />
       </Badge> */}
 
-      <StepGoals/>
-
+      <StepGoals />
     </div>
   );
 };
