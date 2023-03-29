@@ -20,16 +20,27 @@ const StepGoals = () => {
     <div>
       <div className="step-card">
         <div className="step-header-wrapper">
-      <h2>Step Goals:</h2>
+      <h2>Steps!</h2>
       </div>
       <section className="lower-step-card-container">
         <div className="step-avg-goal-wrapper">
       <span>
-        {findUserFirstName()}'s avg step goal: {user.dailyStepGoal}
+        {findUserFirstName()}'s avg step goal: 
       </span>
       </div>
       <div className="step-avg-goal-wrapper">
-      <span>Avg of all user's step goal: {findAvgSteps()}</span>
+      <span>
+        {user.dailyStepGoal}
+        </span>
+        </div>
+      <div className="step-avg-goal-wrapper">
+      <span>Avg of all user's step goal: 
+        </span>
+        </div>
+         <div className="step-avg-goal-wrapper">
+       <span>
+        {findAvgSteps()}
+        </span>
       </div>
       </section>
       </div>
