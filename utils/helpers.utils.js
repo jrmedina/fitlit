@@ -28,6 +28,8 @@ export const getDaysOfWeek = () => {
     previousDaysOfWeek.push(formattedDate);
   }
   previousDaysOfWeek.push(dayjs().format("YYYY/MM/DD"));
+ 
+  
   return previousDaysOfWeek;
 };
 

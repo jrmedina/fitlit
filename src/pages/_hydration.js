@@ -9,6 +9,7 @@ const Hydration = () => {
   const hydrationData = useSelector((state) => state.hydration);
   const [selectedDate, setselectedDate] = useState("");
   const today = dayjs().format("YYYY/MM/DD");
+  const daysAbreviated = ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
 
   const findDayIntake = (date) => {
     const userHydrationData = hydrationData.filter(
@@ -25,6 +26,14 @@ const Hydration = () => {
     setselectedDate(findDayIntake(day));
   };
 
+  const days = daysAbreviated.map((day) => (
+    <div className={`dow ${day}`}>{day}</div>
+  ));
+
+  const dayStats = daysAbreviated.map((day, i) => (
+    <div className={`h2o amt ${day}`}>{daysOfWeek[i] || "-"}</div>
+  ));
+
   return (
     <div className="water-widget-container">
       <div className="water-widget-hero">
@@ -40,21 +49,8 @@ const Hydration = () => {
         </div>
         <div className="lower-water-wrapper">
           <div className="days-of-the-wk-grid">
-            <div className="dow m">M</div>
-            <div className="dow tu">Tu</div>
-            <div className="dow w">W</div>
-            <div className="dow th">Th</div>
-            <div className="dow f">F</div>
-            <div className="dow sa">Sa</div>
-            <div className="dow su">Su</div>
-
-            <div className="h2o amt m">{daysOfWeek[0] || "-"}</div>
-            <div className="h2o amt tu">{daysOfWeek[1] || "-"}</div>
-            <div className="h2o amt w">{daysOfWeek[2] || "-"}</div>
-            <div className="h2o amt th">{daysOfWeek[3] || "-"}</div>
-            <div className="h2o amt f">{daysOfWeek[4] || "-"}</div>
-            <div className="h2o amt sa">{daysOfWeek[5] || "-"}</div>
-            <div className="h2o amt su">{daysOfWeek[6] || "-"}</div>
+            {days}
+            {dayStats}
           </div>
         </div>
         <div className="find-oz-wrapper">
