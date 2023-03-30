@@ -12,8 +12,10 @@ const UserDashboard = () => {
   const findUserFirstName = user.name?.split(" ")[0];
 
   return (
-    <div>
+    <div className="dashboard-container">
+      <div className= "welcome-wrapper">
       <h1>Welcome, {findUserFirstName}</h1>
+      </div>
       {/* <Avatar
         alt="Josh"
         src="https://img.freepik.com/free-vector/businessman-character-avatar-isolated_24877-60111.jpg?w=2000"
@@ -22,11 +24,13 @@ const UserDashboard = () => {
       <Badge badgeContent={user.friends?.length} color="primary">
         <Diversity3OutlinedIcon />
       </Badge> */}
-
+      <div className="widget-container">
       <StepGoals />
       <Hydration />
       {/* <WaterDroplet/> */}
-    </div>
+      </div>
+      </div>
+    
   );
 };
 
