@@ -17,7 +17,7 @@ const StepGoals = () => {
     return (totalStepGoal / users.length).toString()
   };
   return (
-    <div>
+ 
       <div className="step-card">
         <div className="step-header-wrapper">
       <h2>Steps!</h2>
@@ -44,7 +44,7 @@ const StepGoals = () => {
       </div>
       </section>
       </div>
-    </div>
+  
   );
 };
 

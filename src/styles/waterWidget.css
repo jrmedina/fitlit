@@ -1,0 +1,87 @@
+.header-container {
+  display: flex;
+  height: 30px;
+  width: 100%;
+}
+
+.water-widget-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  width: 400px;
+  /* border: solid 1px #fff; */
+  border-radius: 2rem;
+  /* padding: .5rem; */
+  /* background-size: 250px; */
+  /* background-position: left bottom; */
+  backdrop-filter: blur(8px);
+  /* padding-top: .1rem; */
+  color: black;
+}
+
+.water-widget-hero {
+  height: 100%;
+  width: 100%;
+  background-size: 250px;
+  background-position: left bottom;
+  background: url("../assets/water_background1.png");
+  background-repeat: no-repeat;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 2rem;
+  padding: 0.5rem;
+  background-size: 500px;
+  background-position: right top 30%;
+
+  z-index: -1;
+}
+
+.water-widget-wrapper {
+  height: 50px;
+  width: 100%;
+  z-index: 3;
+}
+
+.water-widget-title-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.3rem;
+}
+
+.today-water-wrapper,
+.water-intake-font {
+  color: black;
+  z-index: 3;
+}
+
+.lower-water-wrapper {
+  display: flex;
+  height: 30%;
+  width: 100%;
+  flex-direction: row;
+}
+
+.days-of-the-wk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.find-oz-wrapper {
+  display: flex;
+  height: 30px;
+  width: 100%;
+}
+
+.found-oz-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 3vh;
+  width: 50%;
+  height: 30px;
+}
