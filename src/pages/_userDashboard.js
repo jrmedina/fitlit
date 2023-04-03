@@ -5,7 +5,11 @@ import Diversity3OutlinedIcon from "@mui/icons-material/Diversity3Outlined";
 import StepGoals from "./_stepGoals";
 import Hydration from "./_hydration";
 import WaterDroplet from "@/_waterDroplet";
+
+import Activity from "./_activity";
+
 import Sleep from "./_sleep";
+
 
 const UserDashboard = () => {
   const user = useSelector((state) => state.user);
@@ -28,7 +32,8 @@ const UserDashboard = () => {
       <div className="widget-container">
       <StepGoals />
       <Hydration />
-      <Sleep/>
+
+      <Activity/>
       {/* <WaterDroplet/> */}
       </div>
       </div>
