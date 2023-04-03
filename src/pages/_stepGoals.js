@@ -1,50 +1,32 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { findAvg } from "../../utils/helpers.utils";
 
 const StepGoals = () => {
   const user = useSelector((state) => state.user);
   const users = useSelector((state) => state.users);
+  const firstName = user.name?.split(" ")[0];
 
-
-  const findUserFirstName = user.name?.split(" ")[0];
-
-  const findAvgSteps = () => {
-    const totalStepGoal = users.reduce((acc, user) => {
-      acc = acc += user.dailyStepGoal;
-
-      return acc;
-    }, 0);
-    return (totalStepGoal / users.length).toString()
-  };
   return (
- 
-      <div className="step-card">
-        <div className="step-header-wrapper">
-      <h2>Steps!</h2>
+    <div className="step-card">
+      <div className="step-header-wrapper">
+        <h2>Steps!</h2>
       </div>
       <section className="lower-step-card-container">
         <div className="step-avg-goal-wrapper">
-      <span>
-        {findUserFirstName}'s avg step goal: 
-      </span>
-      </div>
-      <div className="step-avg-goal-wrapper">
-      <span>
-        {user.dailyStepGoal}
-        </span>
+          <span>{firstName}'s avg step goal:</span>
         </div>
-      <div className="step-avg-goal-wrapper">
-      <span>Avg of all user's step goal: 
-        </span>
+        <div className="step-avg-goal-wrapper">
+          <span>{user.dailyStepGoal}</span>
         </div>
-         <div className="step-avg-goal-wrapper">
-       <span>
-        {findAvgSteps()}
-        </span>
-      </div>
+        <div className="step-avg-goal-wrapper">
+          <span>Avg of all user's step goal:</span>
+        </div>
+        <div className="step-avg-goal-wrapper">
+          <span>{findAvg(users, "dailyStepGoal").toString()}</span>
+        </div>
       </section>
-      </div>
-  
+    </div>
   );
 };
 
