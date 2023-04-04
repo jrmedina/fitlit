@@ -32,7 +32,7 @@ const UserDashboard = () => {
       <div className="widget-container">
       <StepGoals />
       <Hydration />
-
+      <Sleep />
       <Activity/>
       {/* <WaterDroplet/> */}
       </div>
