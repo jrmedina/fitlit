@@ -23,13 +23,25 @@ const Activity = () => {
   const findDailyMiles = () => {
     let feetInAMile = 5280;
 
-    const totalUserStepsToday = userInfo(today)?.numSteps;
+    const totalUserStepsToday = () => {
+        userInfo(today)?.numSteps;
+    }
+    // for some reason this function on line 29 will not work past line 37
+    // It's being used on line 33 then it refuses to work past line 37
+    // I redeclared this naming convention on line 40 with the same function and
+    // it work now. 
+    
     const totalMilesWalked = (
-      (totalUserStepsToday * user.strideLength) /
+      (totalUserStepsToday() * user.strideLength) /
       feetInAMile
     ).toFixed(2);
     return `You have walked ${totalMilesWalked} miles, today! `;
   };
+
+  const totalUserStepsToday =
+    userInfo(today)?.numSteps;
+
+  console.log('totalUserStepsToday', totalUserStepsToday)
 
   //   console.log("findDailyMiles(today)", findDailyMiles(today));
 
@@ -61,6 +73,7 @@ const Activity = () => {
   return (
     <div className="activity-widget-container">
       <h2 className="activity-title">Activity</h2>
+      <p>Steps Today: {totalUserStepsToday}</p>
       <p> Time Active </p> <br/>
       <p> {`${hours} hours ${minutes} minutes`} </p>
       {findDailyMiles(today)} <br/>
