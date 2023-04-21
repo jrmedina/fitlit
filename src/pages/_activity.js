@@ -72,28 +72,69 @@ const Activity = () => {
       {userStepGoalMet} <br/>
       {findDailyMiles(today)} 
        <section className="step-week-grid">
-        <section className="step-column 1">
-            
+        <section className="step-row-1 col-1">
+          M  
         </section>
-        <section className="step-column 2">
-
+        <section className="step-row-1 col-2">
+         Tu
         </section>
-        <section className="step-column 3">
-
+        <section className="step-row-1 col-3">
+         W
         </section>
-        <section className="step-column 4">
-
+        <section className="step-row-1 col-4">
+         Th
         </section>
-        <section className="step-column 5">
-
+        <section className="step-row-1 col-5">
+         F
         </section>
-        <section className="step-column 6">
-
+        <section className="step-row-1 col-6">
+         Sa
         </section>
-        <section className="step-column 7">
-            
+        <section className="step-row-1 col-7">
+         Su   
         </section>
-
+        <section className="step-row-2 col-1">
+          
+        </section>
+        <section className="step-row-2 col-2">
+          
+        </section>
+        <section className="step-row-2 col-3">
+          
+        </section>
+        <section className="step-row-2 col-4">
+          
+        </section>
+        <section className="step-row-2 col-5">
+          
+        </section>
+        <section className="step-row-2 col-6">
+          
+        </section>
+        <section className="step-row-2 col-7">
+          
+        </section>
+        <section className="step-row-3 col-1">
+          
+          </section>
+          <section className="step-row-3 col-2">
+          
+          </section>
+          <section className="step-row-3 col-3">
+          
+          </section>
+          <section className="step-row-3 col-4">
+          
+          </section>
+          <section className="step-row-3 col-5">
+          
+          </section>
+          <section className="step-row-3 col-6">
+          
+          </section>
+          <section className="step-row-3 col-7">
+          
+          </section>
        </section> 
     </div>
   );
