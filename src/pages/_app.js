@@ -3,6 +3,8 @@ import "../styles/waterDroplet.css";
 import "../styles/stepWidget.css";
 import "../styles/waterWidget.css";
 import "../styles/dashboardStyles.css";
+import "../styles/activityWidget.css";
+
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 

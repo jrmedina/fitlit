@@ -23,38 +23,28 @@ const Activity = () => {
   const findDailyMiles = () => {
     let feetInAMile = 5280;
 
-    const totalUserStepsToday = () => {
-        userInfo(today)?.numSteps;
-    }
-    // for some reason this function on line 29 will not work past line 37
-    // It's being used on line 33 then it refuses to work past line 37
-    // I redeclared this naming convention on line 40 with the same function and
+    const totalUserStepsToday = userInfo(today)?.numSteps;
+    
+    // for some reason this constant on line 29 will not work past line 39
+    // It's being used on line 26 then it refuses to work past line 39
+    // I re-declared this naming convention on line 40 with the same function and
     // it work now. 
+    // It doesn't matter if I use var, let or const, nothing works past that line.
     
     const totalMilesWalked = (
-      (totalUserStepsToday() * user.strideLength) /
+      (totalUserStepsToday * user.strideLength) /
       feetInAMile
     ).toFixed(2);
     return `You have walked ${totalMilesWalked} miles, today! `;
   };
 
-  const totalUserStepsToday =
-    userInfo(today)?.numSteps;
+  const totalUserStepsToday = userInfo(today)?.numSteps;
+  // Here is the constant that won't work past line 39
 
   console.log('totalUserStepsToday', totalUserStepsToday)
 
-  //   console.log("findDailyMiles(today)", findDailyMiles(today));
 
   const [hours, minutes] = (userInfo(today)?.minutesActive / 60).toFixed(2).split(".")
-//   const hours = timeActiveByDay[0]
-//   const minutes = timeActiveByDay[1]
-
-//   console.log({hours})
-//   console.log({minutes})
-
-
-
-// console.log({timeActiveByDay})
 
 
 
@@ -63,21 +53,48 @@ const Activity = () => {
       ? "Congratulations, you have met your step goal!"
       : "Sorry, you did not meet your step goal today"
 
-  console.log(12345, userStepGoalMet);
-  // steep goal
-  // steps today
-  // return string "sorry you did not meet your step goal today"
-  // "Congratulations, you met your step goal"
-  // return a true or false value
+ // Find user step goals by day. Start at Mon and reset each week. 
+ // Fill in the current step goals and fill in the rest with empty circles.
+ // If step goal is displayed and met show a green circle 🟢
+ // if step goal is display and not met show a red circle 🔴
+ // otherwise show an empty circle Ⓞ
+ 
+  
+
+
 
   return (
     <div className="activity-widget-container">
       <h2 className="activity-title">Activity</h2>
-      <p>Steps Today: {totalUserStepsToday}</p>
-      <p> Time Active </p> <br/>
+      <p> Time Active </p> 
       <p> {`${hours} hours ${minutes} minutes`} </p>
-      {findDailyMiles(today)} <br/>
-      {userStepGoalMet}
+      <p>Steps Today: {totalUserStepsToday}</p>
+      {userStepGoalMet} <br/>
+      {findDailyMiles(today)} 
+       <section className="step-week-grid">
+        <section className="step-column 1">
+            
+        </section>
+        <section className="step-column 2">
+
+        </section>
+        <section className="step-column 3">
+
+        </section>
+        <section className="step-column 4">
+
+        </section>
+        <section className="step-column 5">
+
+        </section>
+        <section className="step-column 6">
+
+        </section>
+        <section className="step-column 7">
+            
+        </section>
+
+       </section> 
     </div>
   );
 };
