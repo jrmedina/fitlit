@@ -9,7 +9,7 @@ const Sleep = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const sleepData = useSelector((state) => state.sleep);
   const userSleepData = sleepData.filter((sleep) => sleep.userID === user.id);
-  const daysAbreviated = ["Su", "M", "Tu", "W", "Th", "F", "Sa"];
+  const daysAbreviated = ["M", "Tu", "W", "Th", "F", "Sa", "Su"];
 
   const findDailySleepData = (date) => {
     const userSleepData = sleepData.filter((sleep) => sleep.userID === user.id);
