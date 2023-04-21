@@ -100,6 +100,7 @@ const Activity = () => {
       <h2 className="activity-title">Activity</h2>
       <p> Time Active </p>
       <p> {`${hours} hours ${minutes} minutes`} </p>
+      
       <p>Steps Today: {totalUserStepsToday}</p>
       {userStepGoalMet} <br />
       {findDailyMiles(today)}
