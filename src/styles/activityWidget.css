@@ -1,0 +1,15 @@
+.activity-widget-container{
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    width: 100%;
+}
+
+
+.step-week-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+
+
+}
