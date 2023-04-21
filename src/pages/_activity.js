@@ -14,32 +14,22 @@ const Activity = () => {
   console.log({ userActivityData });
   const today = dayjs().format("YYYY/MM/DD");
   const daysAbbreviated = ["M", "Tu", "W", "Th", "F", "Sa", "Su"];
-  //   const stepData = useSelector((state) => state.activity.numSteps);
-  // console.log('stepData', stepData)
+ 
   const findDailyStepData = (date) => {
     const userActivities = userActivityData.filter(
       (activity) => activity.userID === user.id
     );
-    // console.log("userStepData", userStepData);
-    const step = userActivities.find((activity) => {
-    //   console.log("step", step);
-    activity.date === date;
-      console.log("step.date", activity.date);
-    });
+    const step = userActivities.find((activity) => activity.date === date);
     console.log("step-29", step);
     return step ? `Steps: ${step.numSteps || "no data"}` : "none";
   };
   const daysOfWeek = getDaysOfWeek().map((day) => findDailyStepData(day));
 
   console.log("findDailyStepData", findDailyStepData());
-  //   const daysOfWeek = getDaysOfWeek().map((day) => findDailySleepData(day));
   const handleChange = (e) => {
     const today = dayjs(e).format("YYYY/MM/DD");
     setSelectedDate(findDailyStepData(today));
   };
-
-  // console.log("userActivityData" , userActivityData.userID)
-  //   console.log(".strideLength", user.strideLength);
 
   const userInfo = (date) =>
     userActivityData.find((steps) => {
