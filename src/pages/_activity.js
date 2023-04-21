@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import * as dayjs from "dayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { findAvg, getDaysOfWeek } from "../../utils/helpers.utils";
+import { getDaysOfWeek } from "../../utils/helpers.utils";
 
 const Activity = () => {
   const [findMilesWalked, setMilesWalked] = useState("");
@@ -69,6 +69,7 @@ const Activity = () => {
     const dayStats = daysAbbreviated.map((day, i) => (
       <div className={`Step amt ${day}`}>{daysOfWeek[i] || "Ⓞ"}</div>
     ));
+    // Why is the className Step amt ${day}?
 
   const userStepGoalMet =
     userInfo(today)?.numSteps >= user.dailyStepGoal
@@ -80,6 +81,19 @@ const Activity = () => {
   // If step goal is displayed and met show a green circle 🟢
   // if step goal is display and not met show a red circle 🔴
   // otherwise show an empty circle Ⓞ
+
+//   const stepGoalMet = userInfo(today)?.numSteps >= user.dailyStepGoal ? "🟢" : "🔴";
+//   console.log('stepGoalMet', stepGoalMet)
+//   const showStepGoalIcon = daysAbbreviated.map((day, i) => (
+//     <div className={`Step-icon ${day}`}>{stepGoalMet[i] || "Ⓞ"}</div>
+//   ));
+
+// emojis are not being displayed, tried the html codes
+// didnt' work 
+// &#9989; ✅
+// source: https://www.w3schools.com/charsets/tryit.asp?deci=9989
+// &#128308; 🔴
+// source: https://www.w3schools.com/charsets/tryit.asp?deci=128308
 
   return (
     <div className="activity-widget-container">
@@ -95,14 +109,8 @@ const Activity = () => {
       <section className="step-week-grid">
         {days}
         {dayStats}
-
-        <section className="step-row-3 col-1"></section>
-        <section className="step-row-3 col-2"></section>
-        <section className="step-row-3 col-3"></section>
-        <section className="step-row-3 col-4"></section>
-        <section className="step-row-3 col-5"></section>
-        <section className="step-row-3 col-6"></section>
-        <section className="step-row-3 col-7"></section>
+        {/* {showStepGoalIcon} */}
+      
       </section>
     </div>
   );
