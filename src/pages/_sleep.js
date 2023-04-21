@@ -9,7 +9,7 @@ const Sleep = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const sleepData = useSelector((state) => state.sleep);
   const userSleepData = sleepData.filter((sleep) => sleep.userID === user.id);
-  const daysAbreviated = ["M", "Tu", "W", "Th", "F", "Sa", "Su"];
+  const daysAbbreviated = ["M", "Tu", "W", "Th", "F", "Sa", "Su"];
 
   const findDailySleepData = (date) => {
     const userSleepData = sleepData.filter((sleep) => sleep.userID === user.id);
@@ -28,11 +28,11 @@ const Sleep = () => {
     setSelectedDate(findDailySleepData(today));
   };
 
-  const days = daysAbreviated.map((day) => (
+  const days = daysAbbreviated.map((day) => (
     <div className={`dow ${day}`}>{day}</div>
   ));
   
-  const dayStats = daysAbreviated.map((day, i) => (
+  const dayStats = daysAbbreviated.map((day, i) => (
     <div className={`h2o amt ${day}`}>{daysOfWeek[i] || "-"}</div>
   ));
 
